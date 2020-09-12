@@ -5,4 +5,5 @@
     <color name="colorAccent">#fd9376</color>
     <color name="colorAccentSecondary">#7ebcbd</color>
     <color name="khaki">#fede84</color>
+    <color name="white50">#80ffffff</color>
 </resources>

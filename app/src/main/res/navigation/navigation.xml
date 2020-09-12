@@ -18,5 +18,14 @@
         android:id="@+id/triviaFragment"
         android:name="com.souvikbiswas.quotestrivia.TriviaFragment"
         android:label="fragment_trivia"
-        tools:layout="@layout/fragment_trivia" />
+        tools:layout="@layout/fragment_trivia" >
+        <action
+            android:id="@+id/action_triviaFragment_to_scoreFragment"
+            app:destination="@id/scoreFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scoreFragment"
+        android:name="com.souvikbiswas.quotestrivia.ScoreFragment"
+        android:label="fragment_score"
+        tools:layout="@layout/fragment_score" />
 </navigation>

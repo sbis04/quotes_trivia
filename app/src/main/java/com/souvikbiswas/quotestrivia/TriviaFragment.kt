@@ -68,9 +68,9 @@ class TriviaFragment : Fragment() {
 
         questionNumberText = binding.questionNumberText
 
-        questionNumberText.text = "${questionIndex+1} / $numQuestions"
+        questionNumberText.text = "${questionIndex + 1} / $numQuestions"
 
-        binding.submitButton.setOnClickListener { view: View? ->
+        binding.submitButton.setOnClickListener { view: View ->
             val checkedId = binding.answerChoiceGroup.checkedRadioButtonId
             if (-1 != checkedId) {
                 var answerIndex = 0
@@ -88,32 +88,14 @@ class TriviaFragment : Fragment() {
                     Toast.makeText(context, "Wrong", Toast.LENGTH_SHORT).show()
                 }
 
-
                 if (questionIndex < numQuestions) {
                     currentQuestion = questions[questionIndex]
                     setQuestion()
                     binding.invalidateAll()
-                    questionNumberText.text = "${questionIndex+1} / $numQuestions"
+                    questionNumberText.text = "${questionIndex + 1} / $numQuestions"
                 } else {
-                    Toast.makeText(context, "Game end", Toast.LENGTH_SHORT).show()
+                    view.findNavController().navigate(R.id.action_triviaFragment_to_scoreFragment)
                 }
-
-//                if (answers[answerIndex] == currentQuestion.answers[0]) {
-//                    questionIndex++
-//                    if (questionIndex < numQuestions) {
-//                        currentQuestion = questions[questionIndex]
-//                        setQuestion()
-//                        binding.invalidateAll()
-//                    } else {
-//                        // view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameWonFragment(numQuestions,questionIndex))
-//
-//                        Toast.makeText(context, "Correct answer", Toast.LENGTH_LONG).show()
-//                    }
-//                } else {
-//                    // view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameOverFragment())
-//
-//                    Toast.makeText(context, "Wrong answer", Toast.LENGTH_LONG).show()
-//                }
             }
         }
 

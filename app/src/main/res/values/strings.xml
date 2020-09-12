@@ -7,4 +7,8 @@
     <string name="trivia">TRIVIA</string>
     <string name="cover_image_desc">Cover image</string>
     <string name="submit_button_text">SUBMIT</string>
+    <string name="play_again_button_text">Play Again</string>
+    <string name="share_button_text">Share</string>
+    <string name="result_text">RESULT</string>
+    <string name="your_score_text">YOUR SCORE</string>
 </resources>
