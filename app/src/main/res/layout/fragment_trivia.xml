@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".TriviaFragment">
+
+    <data>
+
+        <variable
+            name="trivia"
+            type="com.souvikbiswas.quotestrivia.TriviaFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/triviaConstraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+
+        <View
+            android:id="@+id/questionView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:background="@color/khaki"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.40" />
+
+        <TextView
+            android:id="@+id/questionText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@{trivia.currentQuestion.quote}"
+            android:textColor="@android:color/black"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="@+id/questionView"
+            app:layout_constraintEnd_toEndOf="@+id/questionView"
+            app:layout_constraintStart_toStartOf="@+id/questionView"
+            app:layout_constraintTop_toTopOf="@+id/questionView"
+            tools:text='"I have nothing to offer but blood, toil, tears and sweat."' />
+
+        <RadioGroup
+            android:id="@+id/answerChoiceGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            app:layout_constraintBottom_toTopOf="@+id/startButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline">
+
+            <RadioButton
+                android:id="@+id/firstChoiceButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/colorAccentSecondary"
+                android:fontFamily="@font/poppins_medium"
+                android:padding="@dimen/radio_button_padding"
+                android:text="@{trivia.answers[0]}"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                tools:text="Winston Churchill" />
+
+            <RadioButton
+                android:id="@+id/secondChoiceButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/colorAccentSecondary"
+                android:fontFamily="@font/poppins_medium"
+                android:padding="@dimen/radio_button_padding"
+                android:text="@{trivia.answers[1]}"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                tools:text="Sitting Bull" />
+
+            <RadioButton
+                android:id="@+id/thirdChoiceButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/colorAccentSecondary"
+                android:fontFamily="@font/poppins_medium"
+                android:padding="@dimen/radio_button_padding"
+                android:text="@{trivia.answers[2]}"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                tools:text="Nikita Khrushchev" />
+
+            <RadioButton
+                android:id="@+id/fourthChoiceButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/colorAccentSecondary"
+                android:fontFamily="@font/poppins_medium"
+                android:padding="@dimen/radio_button_padding"
+                android:text="@{trivia.answers[3]}"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                tools:text="Charles de Gaulle" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="24dp"
+            android:background="@color/colorAccent"
+            android:text="@string/submit_button_text"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/questionNumberText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@color/colorAccent"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingLeft="@dimen/radio_button_padding"
+            android:paddingTop="@dimen/question_number_padding"
+            android:paddingRight="@dimen/radio_button_padding"
+            android:paddingBottom="@dimen/question_number_padding"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="2 / 5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

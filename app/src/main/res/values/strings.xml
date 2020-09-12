@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">QuotesTrivia</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="start_button_text">Let\'s Start</string>
+    <string name="quotes">Quotes</string>
+    <string name="trivia">TRIVIA</string>
+    <string name="cover_image_desc">Cover image</string>
+    <string name="submit_button_text">SUBMIT</string>
+</resources>

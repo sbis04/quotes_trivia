@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#45387d</color>
+    <color name="colorSecondary">#564690</color>
+    <color name="colorAccent">#fd9376</color>
+    <color name="colorAccentSecondary">#7ebcbd</color>
+    <color name="khaki">#fede84</color>
+</resources>
