@@ -75,7 +75,7 @@
                 android:padding="@dimen/radio_button_padding"
                 android:text="@{trivia.answers[0]}"
                 android:textColor="@android:color/white"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 tools:text="Winston Churchill" />
 
             <RadioButton
@@ -87,7 +87,7 @@
                 android:padding="@dimen/radio_button_padding"
                 android:text="@{trivia.answers[1]}"
                 android:textColor="@android:color/white"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 tools:text="Sitting Bull" />
 
             <RadioButton
@@ -99,7 +99,7 @@
                 android:padding="@dimen/radio_button_padding"
                 android:text="@{trivia.answers[2]}"
                 android:textColor="@android:color/white"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 tools:text="Nikita Khrushchev" />
 
             <RadioButton
@@ -111,7 +111,7 @@
                 android:padding="@dimen/radio_button_padding"
                 android:text="@{trivia.answers[3]}"
                 android:textColor="@android:color/white"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 tools:text="Charles de Gaulle" />
         </RadioGroup>
 

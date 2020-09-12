@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -47,9 +48,11 @@ class TriviaFragment : Fragment() {
     )
 
     lateinit var currentQuestion: Question
+    lateinit var questionNumberText: TextView
     lateinit var answers: MutableList<String>
     private var questionIndex = 0
-    private val numQuestions = min((questions.size + 1) / 2, 3)
+    private var correctAnswers = 0
+    private val numQuestions = 4
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -63,6 +66,10 @@ class TriviaFragment : Fragment() {
 
         binding.trivia = this
 
+        questionNumberText = binding.questionNumberText
+
+        questionNumberText.text = "${questionIndex+1} / $numQuestions"
+
         binding.submitButton.setOnClickListener { view: View? ->
             val checkedId = binding.answerChoiceGroup.checkedRadioButtonId
             if (-1 != checkedId) {
@@ -72,22 +79,41 @@ class TriviaFragment : Fragment() {
                     R.id.thirdChoiceButton -> answerIndex = 2
                     R.id.fourthChoiceButton -> answerIndex = 3
                 }
+                questionIndex++
+
                 if (answers[answerIndex] == currentQuestion.answers[0]) {
-                    questionIndex++
-                    if (questionIndex < numQuestions) {
-                        currentQuestion = questions[questionIndex]
-                        setQuestion()
-                        binding.invalidateAll()
-                    } else {
-                        // view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameWonFragment(numQuestions,questionIndex))
-
-                        Toast.makeText(context, "Correct answer", Toast.LENGTH_LONG).show()
-                    }
+                    correctAnswers++
+                    Toast.makeText(context, "Correct", Toast.LENGTH_SHORT).show()
                 } else {
-                    // view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameOverFragment())
-
-                    Toast.makeText(context, "Wrong answer", Toast.LENGTH_LONG).show()
+                    Toast.makeText(context, "Wrong", Toast.LENGTH_SHORT).show()
                 }
+
+
+                if (questionIndex < numQuestions) {
+                    currentQuestion = questions[questionIndex]
+                    setQuestion()
+                    binding.invalidateAll()
+                    questionNumberText.text = "${questionIndex+1} / $numQuestions"
+                } else {
+                    Toast.makeText(context, "Game end", Toast.LENGTH_SHORT).show()
+                }
+
+//                if (answers[answerIndex] == currentQuestion.answers[0]) {
+//                    questionIndex++
+//                    if (questionIndex < numQuestions) {
+//                        currentQuestion = questions[questionIndex]
+//                        setQuestion()
+//                        binding.invalidateAll()
+//                    } else {
+//                        // view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameWonFragment(numQuestions,questionIndex))
+//
+//                        Toast.makeText(context, "Correct answer", Toast.LENGTH_LONG).show()
+//                    }
+//                } else {
+//                    // view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameOverFragment())
+//
+//                    Toast.makeText(context, "Wrong answer", Toast.LENGTH_LONG).show()
+//                }
             }
         }
 
