@@ -13,6 +13,7 @@ import androidx.navigation.findNavController
 import com.souvikbiswas.quotestrivia.databinding.FragmentTriviaBinding
 import com.souvikbiswas.quotestrivia.databinding.FragmentWelcomeBinding
 import kotlin.math.min
+import kotlin.math.round
 
 class TriviaFragment : Fragment() {
     data class Question(val quote: String, val answers: List<String>)
@@ -83,9 +84,6 @@ class TriviaFragment : Fragment() {
 
                 if (answers[answerIndex] == currentQuestion.answers[0]) {
                     correctAnswers++
-                    Toast.makeText(context, "Correct", Toast.LENGTH_SHORT).show()
-                } else {
-                    Toast.makeText(context, "Wrong", Toast.LENGTH_SHORT).show()
                 }
 
                 if (questionIndex < numQuestions) {
@@ -94,7 +92,12 @@ class TriviaFragment : Fragment() {
                     binding.invalidateAll()
                     questionNumberText.text = "${questionIndex + 1} / $numQuestions"
                 } else {
-                    view.findNavController().navigate(R.id.action_triviaFragment_to_scoreFragment)
+                    if (correctAnswers < round(0.8 * numQuestions)) {
+                        view.findNavController()
+                            .navigate(R.id.action_triviaFragment_to_lostFragment)
+                    } else {
+                        view.findNavController().navigate(R.id.action_triviaFragment_to_wonFragment)
+                    }
                 }
             }
         }

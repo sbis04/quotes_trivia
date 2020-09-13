@@ -20,12 +20,20 @@
         android:label="fragment_trivia"
         tools:layout="@layout/fragment_trivia" >
         <action
-            android:id="@+id/action_triviaFragment_to_scoreFragment"
-            app:destination="@id/scoreFragment" />
+            android:id="@+id/action_triviaFragment_to_wonFragment"
+            app:destination="@id/wonFragment" />
+        <action
+            android:id="@+id/action_triviaFragment_to_lostFragment"
+            app:destination="@id/lostFragment" />
     </fragment>
     <fragment
-        android:id="@+id/scoreFragment"
-        android:name="com.souvikbiswas.quotestrivia.ScoreFragment"
-        android:label="fragment_score"
-        tools:layout="@layout/fragment_score" />
+        android:id="@+id/wonFragment"
+        android:name="com.souvikbiswas.quotestrivia.WonFragment"
+        android:label="fragment_won"
+        tools:layout="@layout/fragment_won" />
+    <fragment
+        android:id="@+id/lostFragment"
+        android:name="com.souvikbiswas.quotestrivia.LostFragment"
+        android:label="fragment_lost"
+        tools:layout="@layout/fragment_lost" />
 </navigation>

@@ -10,7 +10,9 @@
     <string name="play_again_button_text">Play Again</string>
     <string name="share_button_text">Share</string>
     <string name="result_text">RESULT</string>
-    <string name="your_score_text">YOUR SCORE</string>
+    <string name="you_lost">Try Again</string>
     <string name="about_text">Quotes Trivia is simple trivia game where you have to pick the notable humans in history that originally said the memorable quote in a multiple-choice challenge.\n\nAt the end of each game you will get a score based on the number of correct answers you have selected.\n\nYou can also share you score with others.\n\nThe app is open sourced on GitHub, so you can take a look at its source code.</string>
     <string name="rules_text">You can choose an option among the choices you are presented with. Each time you choose a correct person who have originally said the quote in history, you score a point.\n\nThe game ends after answering four questions and you are presented with the score.\n\nYou can also share the score with your friends.\n\nAt the end of each game, you get an option to play again. When tapped, you can again start playing the game with the next four set of questions.\n\nHappy playing!</string>
+    <string name="winner_text">Congratulations!</string>
+    <string name="next_match">Next Match</string>
 </resources>

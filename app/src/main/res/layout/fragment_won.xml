@@ -3,23 +3,23 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ScoreFragment">
+    tools:context=".WonFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/scoreConstraint"
+        android:id="@+id/wonConstraint"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPrimary">
 
         <Button
-            android:id="@+id/playAgainButton"
+            android:id="@+id/nextMatchButton"
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="24dp"
-            android:background="@color/colorAccent"
-            android:text="@string/play_again_button_text"
+            android:background="@android:color/holo_green_light"
+            android:text="@string/next_match"
             android:textColor="@android:color/white"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -27,7 +27,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/shareButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -38,56 +38,56 @@
             android:textSize="22sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/correctAnswersText" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/correctAnswersText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:fontFamily="@font/poppins_medium"
             android:textAppearance="@style/TextAppearance.AppCompat.Display4"
             android:textColor="@android:color/white"
-            app:layout_constraintBottom_toTopOf="@+id/playAgainButton"
-            app:layout_constraintEnd_toStartOf="@+id/textView3"
+            app:layout_constraintBottom_toTopOf="@+id/nextMatchButton"
+            app:layout_constraintEnd_toStartOf="@+id/separatorText"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            app:layout_constraintTop_toBottomOf="@+id/winnerText"
             app:layout_constraintVertical_bias="0.35"
-            tools:text="6" />
+            tools:text="7" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/totalQuestionsText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:fontFamily="@font/poppins_medium"
             android:textAppearance="@style/TextAppearance.AppCompat.Display4"
             android:textColor="@color/white50"
-            app:layout_constraintBottom_toBottomOf="@+id/textView3"
+            app:layout_constraintBottom_toBottomOf="@+id/separatorText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/textView3"
-            app:layout_constraintTop_toTopOf="@+id/textView3"
+            app:layout_constraintStart_toEndOf="@+id/separatorText"
+            app:layout_constraintTop_toTopOf="@+id/separatorText"
             tools:text="8" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/separatorText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_medium"
             android:textAppearance="@style/TextAppearance.AppCompat.Display4"
             android:textColor="@color/white50"
-            app:layout_constraintBottom_toBottomOf="@+id/textView"
-            app:layout_constraintEnd_toStartOf="@+id/textView2"
+            app:layout_constraintBottom_toBottomOf="@+id/correctAnswersText"
+            app:layout_constraintEnd_toStartOf="@+id/totalQuestionsText"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/textView"
-            app:layout_constraintTop_toTopOf="@+id/textView"
+            app:layout_constraintStart_toEndOf="@+id/correctAnswersText"
+            app:layout_constraintTop_toTopOf="@+id/correctAnswersText"
             tools:text="/" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/resultText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -100,17 +100,17 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/winnerText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat_bold"
-            android:letterSpacing="0.1"
-            android:text="@string/your_score_text"
+            android:letterSpacing="0.05"
+            android:text="@string/winner_text"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="@color/colorAccent"
+            android:textColor="@android:color/holo_green_light"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            app:layout_constraintTop_toBottomOf="@+id/resultText" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

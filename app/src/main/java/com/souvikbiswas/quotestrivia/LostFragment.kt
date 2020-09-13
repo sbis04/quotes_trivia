@@ -6,16 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import com.souvikbiswas.quotestrivia.databinding.FragmentScoreBinding
+import com.souvikbiswas.quotestrivia.databinding.FragmentLostBinding
 
-class ScoreFragment : Fragment() {
+class LostFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val binding: FragmentScoreBinding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_score, container, false
+        val binding: FragmentLostBinding = DataBindingUtil.inflate(
+            inflater, R.layout.fragment_lost, container, false
         )
 
         return binding.root
