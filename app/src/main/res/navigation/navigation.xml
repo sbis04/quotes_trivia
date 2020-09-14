@@ -19,10 +19,14 @@
         tools:layout="@layout/fragment_trivia">
         <action
             android:id="@+id/action_triviaFragment_to_wonFragment"
-            app:destination="@id/wonFragment" />
+            app:destination="@id/wonFragment"
+            app:popUpTo="@id/triviaFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_triviaFragment_to_lostFragment"
-            app:destination="@id/lostFragment" />
+            app:destination="@id/lostFragment"
+            app:popUpTo="@id/triviaFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/wonFragment"
@@ -34,6 +38,11 @@
         <argument
             android:name="numCorrect"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_wonFragment_to_triviaFragment"
+            app:destination="@id/triviaFragment"
+            app:popUpTo="@id/wonFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/lostFragment"
@@ -45,6 +54,11 @@
         <argument
             android:name="numCorrect"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_lostFragment_to_triviaFragment"
+            app:destination="@id/triviaFragment"
+            app:popUpTo="@id/lostFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"

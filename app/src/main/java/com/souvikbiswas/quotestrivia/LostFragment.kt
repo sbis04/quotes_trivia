@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.souvikbiswas.quotestrivia.databinding.FragmentLostBinding
 
 class LostFragment : Fragment() {
@@ -21,6 +22,11 @@ class LostFragment : Fragment() {
         val binding: FragmentLostBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_lost, container, false
         )
+
+        binding.playAgainButton.setOnClickListener { view: View ->
+            view.findNavController()
+                .navigate(LostFragmentDirections.actionLostFragmentToTriviaFragment())
+        }
 
         correctAnswersText = binding.correctAnswersText
         totalQuestionsText = binding.totalQuestionsText
