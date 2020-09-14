@@ -11,7 +11,11 @@
         tools:layout="@layout/fragment_welcome">
         <action
             android:id="@+id/action_welcomeFragment_to_triviaFragment"
-            app:destination="@id/triviaFragment" />
+            app:destination="@id/triviaFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/triviaFragment"
@@ -20,11 +24,19 @@
         <action
             android:id="@+id/action_triviaFragment_to_wonFragment"
             app:destination="@id/wonFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
             app:popUpTo="@id/triviaFragment"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_triviaFragment_to_lostFragment"
             app:destination="@id/lostFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
             app:popUpTo="@id/triviaFragment"
             app:popUpToInclusive="true" />
     </fragment>
@@ -41,6 +53,10 @@
         <action
             android:id="@+id/action_wonFragment_to_triviaFragment"
             app:destination="@id/triviaFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
             app:popUpTo="@id/wonFragment"
             app:popUpToInclusive="true" />
     </fragment>
@@ -57,6 +73,10 @@
         <action
             android:id="@+id/action_lostFragment_to_triviaFragment"
             app:destination="@id/triviaFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
             app:popUpTo="@id/lostFragment"
             app:popUpToInclusive="true" />
     </fragment>
