@@ -26,20 +26,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <Button
-            android:id="@+id/shareButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@color/colorAccentSecondary"
-            android:text="@string/share_button_text"
-            android:textAllCaps="false"
-            android:textColor="@android:color/white"
-            android:textSize="22sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/correctAnswersText" />
-
         <TextView
             android:id="@+id/correctAnswersText"
             android:layout_width="wrap_content"
@@ -55,7 +41,7 @@
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/winnerText"
-            app:layout_constraintVertical_bias="0.35"
+            app:layout_constraintVertical_bias="0.4"
             tools:text="7" />
 
         <TextView
@@ -93,7 +79,6 @@
             android:id="@+id/resultText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
             android:fontFamily="@font/poppins_medium"
             android:text="@string/result_text"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"

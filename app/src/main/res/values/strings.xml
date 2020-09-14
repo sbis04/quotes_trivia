@@ -17,4 +17,5 @@
     <string name="next_match">Next Match</string>
     <string name="separator_text">/</string>
     <string name="about_title">About</string>
+    <string name="rules_title">Rules</string>
 </resources>
