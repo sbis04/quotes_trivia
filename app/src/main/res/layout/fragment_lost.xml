@@ -32,6 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:fontFamily="@font/poppins_medium"
+            android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Display4"
             android:textColor="@android:color/white"
             app:layout_constraintBottom_toTopOf="@+id/playAgainButton"
@@ -49,6 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:fontFamily="@font/poppins_medium"
+            android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Display4"
             android:textColor="@color/white50"
             app:layout_constraintBottom_toBottomOf="@+id/separatorText"
@@ -63,14 +65,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_medium"
+            android:text="@string/separator_text"
+            android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Display4"
             android:textColor="@color/white50"
             app:layout_constraintBottom_toBottomOf="@+id/correctAnswersText"
             app:layout_constraintEnd_toStartOf="@+id/totalQuestionsText"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/correctAnswersText"
-            app:layout_constraintTop_toTopOf="@+id/correctAnswersText"
-            tools:text="/" />
+            app:layout_constraintTop_toTopOf="@+id/correctAnswersText" />
 
         <TextView
             android:id="@+id/resultText"

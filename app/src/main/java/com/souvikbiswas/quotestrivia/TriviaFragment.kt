@@ -94,9 +94,9 @@ class TriviaFragment : Fragment() {
                 } else {
                     if (correctAnswers < round(0.8 * numQuestions)) {
                         view.findNavController()
-                            .navigate(R.id.action_triviaFragment_to_lostFragment)
+                            .navigate(TriviaFragmentDirections.actionTriviaFragmentToLostFragment(numQuestions, correctAnswers))
                     } else {
-                        view.findNavController().navigate(R.id.action_triviaFragment_to_wonFragment)
+                        view.findNavController().navigate(TriviaFragmentDirections.actionTriviaFragmentToWonFragment(numQuestions, correctAnswers))
                     }
                 }
             }
