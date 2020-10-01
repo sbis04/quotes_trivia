@@ -4,7 +4,7 @@
 
 > Android sample app to get familiarized with **Navigation Component**
 
-### App in action
+<h3 align="center">App in action</h3>
 
 <p align="center">
   <img src="https://github.com/sbis04/quotes_trivia/raw/master/screenshot/app_anim.gif" alt="App Animation" />
