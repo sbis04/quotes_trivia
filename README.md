@@ -10,6 +10,16 @@
   <img src="https://github.com/sbis04/quotes_trivia/raw/master/screenshot/app_anim.gif" alt="App Animation" />
 </p>
 
+### Navigation Graph
+
+It manages your app's navigation. It is a resource file that consists of the **destinations** along with the **actions**, which are used for navigating to another destination from the current one.
+
+The **Navigation Graph** of the Quotes Trivia looks like this: 
+
+<p align="center">
+  <img src="https://github.com/sbis04/quotes_trivia/raw/master/screenshot/nav_graph_complete.png" alt="Nav Graph" />
+</p>
+
 ## License
 
 Copyright (c) 2020 Souvik Biswas
