@@ -17,7 +17,7 @@ It manages your app's navigation. It is a resource file that consists of the **d
 The **Navigation Graph** of the Quotes Trivia looks like this: 
 
 <p align="center">
-  <img src="https://github.com/sbis04/quotes_trivia/raw/master/screenshot/nav_graph_complete.png" alt="Nav Graph" />
+  <img src="https://github.com/sbis04/quotes_trivia/raw/master/screenshot/nav_graph_complete.png" alt="Navigation Graph" />
 </p>
 
 ## License
