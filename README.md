@@ -4,13 +4,13 @@
 
 > Android sample app to get familiarized with **Navigation Component**
 
-<h3 align="center">App in action</h3>
+<h2 align="center">App in action</h2>
 
 <p align="center">
   <img src="https://github.com/sbis04/quotes_trivia/raw/master/screenshot/app_anim.gif" alt="App Animation" />
 </p>
 
-### Navigation Graph
+## Navigation Graph
 
 It manages your app's navigation. It is a resource file that consists of the **destinations** along with the **actions**, which are used for navigating to another destination from the current one.
 
