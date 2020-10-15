@@ -3,7 +3,17 @@
 workflows:
     android-app:
         name: Quotes Trivia
+        environment:
+            vars:
+                SONAR_TOKEN: "Encrypted(Z0FBQUFBQmZpQmtjU3JxNFJMOHBNMXYzZV9yMkZpb1p0Y2NKQ0pWbjhiNjNRLWhzcndDa2NMRU5teTVtVWlpYlFCTnF6eHVLMlNDaTVVQWxERHJGb2JRX0tZSm5jOUtmQUZ6Q2FVQjlzSW43VGE0WkZYdzVuOHVYSHdkSHdTOE82MlAzVXNoeEVPSm8=)"
         scripts:
+            - |
+              # set up release key.properties
+              cat >> "$FCI_BUILD_DIR/gradle.properties" <<EOF
+              systemProp.sonar.host.url=https://sonarcloud.io
+              systemProp.sonar.login=$SONAR_TOKEN
+              EOF
             - ./gradlew assembleDebug
+            - ./gradlew sonarqube
         artifacts:
             - app/build/outputs/**/*.apk
