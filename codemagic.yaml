@@ -10,6 +10,7 @@ workflows:
             - |
               # set up release key.properties
               cat >> "$FCI_BUILD_DIR/gradle.properties" <<EOF
+
               systemProp.sonar.host.url=https://sonarcloud.io
               systemProp.sonar.login=$SONAR_TOKEN
               EOF
