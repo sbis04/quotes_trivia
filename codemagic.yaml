@@ -14,8 +14,7 @@ workflows:
               ./gradlew assembleDebug
             - |
               # Generate SonarQube analysis
-              - >
-                ./gradlew sonarqube 
+              - >./gradlew sonarqube 
                 -Dsonar.projectKey=$SONAR_PROJECT_KEY 
                 -Dsonar.organization=$SONAR_ORG_KEY 
                 -Dsonar.projectVersion=1.0.0-cm 
