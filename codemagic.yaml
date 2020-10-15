@@ -13,7 +13,8 @@ workflows:
               systemProp.sonar.host.url=https://sonarcloud.io
               systemProp.sonar.login=$SONAR_TOKEN
               EOF
-            - ./gradlew assembleDebug
+            - cat "$FCI_BUILD_DIR/gradle.properties"
+#            - ./gradlew assembleDebug
             - ./gradlew sonarqube
         artifacts:
             - app/build/outputs/**/*.apk
