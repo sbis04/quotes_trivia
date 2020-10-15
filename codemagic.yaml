@@ -9,12 +9,10 @@ workflows:
                 SONAR_PROJECT_KEY: "Encrypted(Z0FBQUFBQmZpQ2FhcUhvRURjV3BCcUl0aUwzMWFNNi1hV2NBVnVWS2o3RjVwbmwwNkktdVZrcERKRGF0RFdWSkJkcnBpT213UVJxcXNfUWpJdGtYWlEyQzVQQ3ZPMTExWlZQemhkbnNyRmljS2wxRURSa01tSDQ9)"
                 SONAR_ORG_KEY: "Encrypted(Z0FBQUFBQmZpQ2E2ZUQ3N3NwajdDOUhYYkRXUnN3WW84WEdNeVBYUm1LcjNxLW5NdV9JVWMxbUt5cVc0VHUySWNYeVhIX3pMNGtjVklwTlY0MTBDX1dVX3VQNXBlbVZRRnc9PQ==)"
         scripts:
-#            - ./gradlew assembleDebug
             - ./gradlew sonarqube \
               -Dsonar.projectKey=$SONAR_PROJECT_KEY \
               -Dsonar.organization=$SONAR_ORG_KEY \
               -Dsonar.host.url=https://sonarcloud.io \
               -Dsonar.login=$SONAR_TOKEN
-
         artifacts:
             - app/build/outputs/**/*.apk
