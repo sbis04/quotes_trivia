@@ -12,8 +12,6 @@ workflows:
             - |
               # Generate debug build
               ./gradlew assembleDebug
-            - |
-              # Sonar
             - >
               ./gradlew sonarqube 
               -Dsonar.projectKey=$SONAR_PROJECT_KEY 
