@@ -20,6 +20,6 @@ workflows:
               EOF
             - cat "$FCI_BUILD_DIR/gradle.properties"
 #            - ./gradlew assembleDebug
-            - ./gradlew sonarqube
+            - cd $FCI_BUILD_DIR && ./gradlew sonarqube
         artifacts:
             - app/build/outputs/**/*.apk
