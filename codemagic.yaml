@@ -12,12 +12,13 @@ workflows:
             - |
               # Generate debug build
               ./gradlew assembleDebug
-            - >
-              ./gradlew sonarqube 
-              -Dsonar.projectKey=$SONAR_PROJECT_KEY 
-              -Dsonar.organization=$SONAR_ORG_KEY 
-              -Dsonar.projectVersion=1.0.0-cm 
-              -Dsonar.host.url=https://sonarcloud.io 
+            - |
+              # something
+              ./gradlew sonarqube \
+              -Dsonar.projectKey=$SONAR_PROJECT_KEY \
+              -Dsonar.organization=$SONAR_ORG_KEY \
+              -Dsonar.projectVersion=1.0.0-cm \
+              -Dsonar.host.url=https://sonarcloud.io \
               -Dsonar.login=$SONAR_TOKEN
         artifacts:
             - app/build/outputs/**/*.apk
