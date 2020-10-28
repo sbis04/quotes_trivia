@@ -13,7 +13,7 @@ workflows:
               # Generate debug build
               ./gradlew assembleDebug
             - |
-              # something
+              # Generate and upload code analysis report
               ./gradlew sonarqube \
               -Dsonar.projectKey=$SONAR_PROJECT_KEY \
               -Dsonar.organization=$SONAR_ORG_KEY \
