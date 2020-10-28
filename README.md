@@ -20,6 +20,40 @@ The **Navigation Graph** of the Quotes Trivia looks like this:
   <img src="https://github.com/sbis04/quotes_trivia/raw/master/screenshot/nav_graph_complete.png" alt="Navigation Graph" />
 </p>
 
+## Codemagic YAML template
+
+You can use the following `codemagic.yaml` file for generating and uploading the build analysis result to Codemagic.
+
+```yaml
+workflows:
+    android-app:
+        name: SonarQube Analysis
+        environment:
+            vars:
+                SONAR_TOKEN: Encrypted(...) # enter the encrypted version of your SonarCloud token
+                SONAR_PROJECT_KEY: Encrypted(...) # enter the encrypted version of your SonarCloud project key
+                SONAR_ORG_KEY: Encrypted(...) # enter the encrypted version of your SonarCloud organization key
+                SONAR_PROJECT_VERSION: 1.0.0-cm
+        scripts:
+            - |
+              # Generate debug build
+              ./gradlew assembleDebug
+            - |
+              # Generate and upload code analysis report
+              ./gradlew sonarqube \
+              -Dsonar.projectKey=$SONAR_PROJECT_KEY \
+              -Dsonar.organization=$SONAR_ORG_KEY \
+              -Dsonar.host.url=https://sonarcloud.io \
+              -Dsonar.login=$SONAR_TOKEN \
+              -Dsonar.projectVersion=$SONAR_PROJECT_VERSION
+        artifacts:
+            - app/build/outputs/**/*.apk
+        publishing:
+            email:
+                recipients:
+                    - name@example.com # enter your email
+```
+
 ## License
 
 Copyright (c) 2020 Souvik Biswas
