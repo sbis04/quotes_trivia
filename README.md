@@ -22,7 +22,7 @@ The **Navigation Graph** of the Quotes Trivia looks like this:
 
 ## Codemagic YAML template
 
-You can use the following `codemagic.yaml` file for generating and uploading the build analysis result to Codemagic.
+You can use the following `codemagic.yaml` file for generating and uploading the build analysis result to [SonarQube](https://www.sonarqube.org/) using [Codemagic](https://codemagic.io/start/).
 
 ```yaml
 workflows:
